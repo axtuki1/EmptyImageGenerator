@@ -6,11 +6,13 @@ const imageGen = (width, height) => {
     canvas.width = width;
     canvas.height = height;
     const context = canvas.getContext("2d");
-    context.fillStyle = "#000000";
-    context.fillRect(0,0,width,height);
+    context.fillStyle = document.querySelector("#color").value;
+    context.fillRect(0, 0, width, height);
+    
+    let name = document.querySelector("#name").value.replace(/\.png/g, '');
     let link = document.createElement("a");
     link.href = canvas.toDataURL("image/png");
-    link.download = "empty.png";
+    link.download = name+".png";
     link.click();
 }
 
