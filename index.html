@@ -13,15 +13,33 @@
         <h1>"空"(Empty)の画像生成機</h1>
         <p>VRChatで書き込み用の空画像ほしいときとかに使えるかもしれないやつです</p>
         <hr>
-        <section>
-            ファイル名<br>
-            <input type="text" id="name" value="empty.png" placeholder="ファイル名">
-        </section>
-        <section>
-            画像設定<br>
-            <input type="number" class="inline" id="width" value="1920"> x <input type="number" class="inline"
-                id="height" value="1080">
-            <input type="color" id="color" class="inline" value="#000000">
+        <section class="interface">
+            <section class="input-area">
+                <section>
+                    ファイル名<br>
+                    <input type="text" id="name" value="empty.png" placeholder="ファイル名">
+                </section>
+                <section>
+                    画像設定<br>
+                    <input type="number" class="inline" id="width" value="1920"> x <input type="number" class="inline"
+                        id="height" value="1080">
+                    <input type="color" id="color" class="inline" value="#000000">
+                </section>
+                <section>
+                    透明度<br>
+                    <input type="number" class="inline" id="alpha" value="1"> ← 
+                    <input type="number" class="inline" id="alphaPer" value="100">% ← 
+                    <input type="range" class="inline" id="alphaRange" value="100">
+                </section>
+            </section>
+            <section class="preview">
+                プレビュー<br>
+                <div class="background">
+                    <div class="draw-area">
+                        <span class="resolution"></span>
+                    </div>
+                </div>
+            </section>
         </section>
         <button id="gen" onClick="gen()" class="btn">生成</button>
         <script src="js/index.js"></script>
